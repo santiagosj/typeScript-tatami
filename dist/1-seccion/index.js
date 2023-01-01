@@ -28,4 +28,30 @@ var Talla;
 })(Talla || (Talla = {}));
 const miEnum = Talla.Grande;
 console.log(miEnum);
+const estado = 2;
+const objeto = {
+    id: 1,
+    nombre: 'Santi',
+    talla: Talla.Grande,
+    direccion: {
+        numero: 123,
+        calle: 'Siempre viva',
+        pais: 'Argentina'
+    }
+};
+const arr = [];
+const fn = (edad) => {
+    if (edad > 17)
+        return "Bienvenido";
+    return "No puedes pasar";
+};
+function validaEdad(edad, msg) {
+    if (edad > 17)
+        return `Puedes entrar ${msg}`;
+    return "No puedes pasar";
+}
+validaEdad(18, 'Bienvenido');
+function ErrorUsuario() {
+    throw new Error('Error de usuario');
+}
 //# sourceMappingURL=index.js.map
