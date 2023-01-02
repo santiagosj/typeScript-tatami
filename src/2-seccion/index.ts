@@ -129,3 +129,21 @@ function myFn(x: string | number) {
     }
 }
 
+//8- type unknown
+
+function procesa(algo: unknown) {
+    if (typeof algo === 'string') {
+        // algo.metodoString
+    }
+
+    if (typeof algo === 'number') {
+        // algo.metodonumber
+    }
+
+    if (algo instanceof String) {
+        //hacer algo
+    }
+    // algo.hacerCosas()
+    // algo.otrasCosas()
+    // algo.genkidama()
+}
