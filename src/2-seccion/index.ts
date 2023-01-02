@@ -97,3 +97,35 @@ const fn5: any = null
 
 fn5?.()
 
+//6- nullishcoalescing operator
+
+const difficulty: number | null = 0
+
+const user2 = {
+    username: 'santi',
+    difficulty: difficulty ?? 1
+}
+
+console.log(user2)
+
+//7- Type assertion
+
+const elem: any = null
+
+const elem2 = elem as number
+
+//const input = document.getElementById('username') as HTMLInputElement
+const input = <HTMLInputElement>document.getElementById('username')
+
+//8- type Narrowing
+
+function myFn(x: string | number) {
+    if (typeof x === 'string') {
+        // x.
+    }
+
+    if (typeof x === 'number') {
+        // x.   
+    }
+}
+

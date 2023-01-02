@@ -41,4 +41,19 @@ const arr1 = null;
 arr1 === null || arr1 === void 0 ? void 0 : arr1[0];
 const fn5 = null;
 fn5 === null || fn5 === void 0 ? void 0 : fn5();
+const difficulty = 0;
+const user2 = {
+    username: 'santi',
+    difficulty: difficulty !== null && difficulty !== void 0 ? difficulty : 1
+};
+console.log(user2);
+const elem = null;
+const elem2 = elem;
+const input = document.getElementById('username');
+function myFn(x) {
+    if (typeof x === 'string') {
+    }
+    if (typeof x === 'number') {
+    }
+}
 //# sourceMappingURL=index.js.map
