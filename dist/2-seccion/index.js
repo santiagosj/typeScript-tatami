@@ -56,4 +56,12 @@ function myFn(x) {
     if (typeof x === 'number') {
     }
 }
+function procesa(algo) {
+    if (typeof algo === 'string') {
+    }
+    if (typeof algo === 'number') {
+    }
+    if (algo instanceof String) {
+    }
+}
 //# sourceMappingURL=index.js.map
