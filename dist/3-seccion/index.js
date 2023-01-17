@@ -1,10 +1,11 @@
 "use strict";
 class Personaje {
-    constructor(id, name, nivel, hp) {
+    constructor(id, name, nivel, _hp) {
         this.id = id;
         this.name = name;
         this.nivel = nivel;
-        this.hp = hp;
+        this._hp = _hp;
+        this.team = 0;
     }
     congelar() {
         return "gssshhhhh";
@@ -14,8 +15,11 @@ class Personaje {
         return this.nivel;
     }
     cambiarHP(cantidad) {
-        this.hp = this.hp + cantidad;
-        return this.hp;
+        this._hp = this._hp + cantidad;
+        return this._hp;
+    }
+    get hp() {
+        return this._hp;
     }
 }
 const subZero = new Personaje(1, 'Sub Zero', 100, 200);
