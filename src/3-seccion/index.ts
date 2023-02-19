@@ -45,13 +45,13 @@ class Personaje {
         return this._hp
     }
 
-    static agregarMiembro(clan: string): void {
-        Personaje.clanes.push(clan)
-        let filteredClan = Personaje.clanes.filter(c => c !== clan)
-        this.clanMembers = filteredClan.length
-        console.log(this.clanMembers)
-        // Personaje.clanMembers++
-    }
+    // static agregarMiembro(clan: string): void {
+    //     // Personaje.clanes.push(clan)
+    //     // let filteredClan = Personaje.clanes.filter(c => c !== clan)
+    //     // this.clanMembers = filteredClan.length
+    //     // console.log(this.clanMembers)
+    //     // Personaje.clanMembers++
+    // }
 
     //=======================
     // getters y Setters
@@ -79,4 +79,4 @@ const scorpion = new Personaje(3, 'Scorpion', 100, 200, 'Shirai-Ryu')
 
 // Personaje.agregarMiembro(frozen.clan)
 
-Personaje.agregarMiembro(scorpion.clan)
+// Personaje.agregarMiembro(scorpion.clan)
