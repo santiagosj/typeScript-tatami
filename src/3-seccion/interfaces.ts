@@ -33,3 +33,12 @@ class Serpiente implements Animales {
         return 'sssssssss...'
     }
 }
+
+class DiccionarioUsuarios {
+    [id: string]: string
+}
+
+let usuariosId = new DiccionarioUsuarios();
+
+usuariosId['1a'] = 'Usuario 1'
+usuariosId['a1'] = 'Usuario 2'
