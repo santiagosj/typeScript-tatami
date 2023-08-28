@@ -129,7 +129,7 @@ function myFn(x: string | number) {
     }
 }
 
-//8- type unknown
+//9- type unknown
 
 function procesa(algo: unknown) {
     if (typeof algo === 'string') {

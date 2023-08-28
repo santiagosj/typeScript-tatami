@@ -22,6 +22,9 @@ class Producto extends DatosBasicos {
     get fullDesc() {
         return 'Producto: ' + super.fullDesc;
     }
+    guardar() {
+        console.log('guardando produco...');
+    }
 }
 class Categorias extends DatosBasicos {
     constructor(name, desc, created_at, created_by) {
@@ -33,6 +36,9 @@ class Categorias extends DatosBasicos {
     }
     get fullDesc() {
         return 'Categoria: ' + super.fullDesc;
+    }
+    guardar() {
+        console.log('guardando categoria...');
     }
 }
 let producto1 = new Producto(100, 1, "iPhone", "smartphone", new Date, 1);
