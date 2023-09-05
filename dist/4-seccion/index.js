@@ -26,4 +26,70 @@ const programador = new Programador({ encender: () => { }, apagar: () => { } });
 const programador1 = new Programador('Hola Mundo');
 programador.computador.encender();
 programador1.computador.toUpperCase();
+function fetchProduct() {
+    return {
+        key: 'id',
+        value: {
+            id: 'id de producto'
+        },
+    };
+}
+function fetchStock() {
+    return {
+        key: "stock", value: 20
+    };
+}
+class UsuarioGenericos {
+    constructor(id) {
+        this.id = id;
+    }
+}
+function print(t) {
+    return t;
+}
+print({ id: 'user_id', name: 'Santi' });
+class Estado {
+    constructor() {
+        this.data = [];
+    }
+    agregar(t) {
+        this.data = [...this.data, ...[t]];
+    }
+    getEstado() {
+        return this.data;
+    }
+}
+class EstadoEliminar extends Estado {
+    eliminar(index) {
+        this.data = this.data.filter(x => x.id !== index);
+    }
+}
+class EstadoUsuarios extends Estado {
+    reiniciarContrasenas() {
+    }
+}
+const estadoUsuarios = new EstadoUsuarios();
+const calendar = { id: 1, font: 'google', owner: 'yo' };
+function getProp(objeto, property) {
+    return objeto[property];
+}
+getProp(calendar, 'id');
+getProp(calendar, 'font');
+getProp(calendar, 'owner');
+const keyVal = {
+    'uno': 20,
+    'dos': 35
+};
+const punto1 = {
+    x: 1,
+};
+const punto2 = {
+    x: 1,
+    y: 2
+};
+const punto3 = {
+    x: 1,
+    y: 2,
+    desc: 'descripcion'
+};
 //# sourceMappingURL=index.js.map
