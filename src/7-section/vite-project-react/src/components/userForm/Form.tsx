@@ -2,24 +2,48 @@ import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
 import Input from '../Input';
 import Button from '../Button';
 
+export type UserFormState = {
+    name: string,
+    username: string
+}
 
-export default function UserForm({ }) {
-    const [input, setInput] = useState('');
+const InitialFormValue: UserFormState = {
+    name: '',
+    username: ''
+}
 
-    const handleOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-        setInput(e.target.value)
+interface UserFormProps {
+    handleSubmit: (user: UserFormState) => void,
+}
+
+export default function UserForm({ handleSubmit }: UserFormProps) {
+
+    const [form, setForm] = useState(InitialFormValue);
+
+    //Currying
+
+    const handleOnChange: (inputName: string) => ChangeEventHandler<HTMLInputElement> = (inputName) => (e) => {
+        setForm({ ...form, [inputName]: e.target.value });
     }
 
-    const saludar: MouseEventHandler<HTMLButtonElement> = (e) => {
+    // name --> agregar en el componente input la propiedad name:string
+
+    //  const handleOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    //     const name = e.target.name as keyof UserFormState;
+    //     setForm({...form, [name]: e.target.value})
+    //  }
+
+    const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault();
-        alert(`Hola ${input ?? 'master'}`);
+        handleSubmit(form);
+        setForm(InitialFormValue)
     }
 
     return (
         <>
-            <Input placeholder='Nombre' handleOnChange={handleOnChange} />
-            <Input placeholder='Apellido' handleOnChange={handleOnChange} />
-            <Button handleClick={saludar} >Saludar</Button>
+            <Input value={form.name} placeholder='Nombre' handleOnChange={handleOnChange('name')} />
+            <Input value={form.username} placeholder='Apellido' handleOnChange={handleOnChange('username')} />
+            <Button handleClick={handleClick} >Enviar</Button>
         </>
     )
 }
