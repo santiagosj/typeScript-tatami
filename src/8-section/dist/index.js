@@ -14,15 +14,15 @@ function Route(route) {
 function Method(target, methodName, descriptor) {
     console.log(methodName, descriptor);
     const original = descriptor.value;
-    descriptor.value = function () {
+    descriptor.value = function (...args) {
         console.log('antes del metodo');
-        original();
+        original.call(this, ...args);
         console.log('despues del metodo');
     };
 }
 let Productos = class Productos {
-    find() {
-        console.log('soy el metodo find');
+    find(val) {
+        console.log(`soy el metodo find ${val}`);
     }
 };
 __decorate([
@@ -31,4 +31,5 @@ __decorate([
 Productos = __decorate([
     Route('/productos')
 ], Productos);
-//# sourceMappingURL=index.js.map
+const p = new Productos();
+p.find('instancia p');
